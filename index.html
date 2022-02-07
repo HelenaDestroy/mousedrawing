@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first drawing program</title>
+    <link rel="icon" type="image/png" href="https://images.vexels.com/media/users/3/136550/isolated/lists/ed64693b9479586e7e9e42ca79e9d887-icono-de-escritura-de-lapiz.png"/>
+   <link rel="stylesheet" href="stylemouse.css"/>
+</head>
+<body>
+    <header>
+      <img class="lapiz" src="pencil.png" alt="Dibujo de un lápiz"/>
+      <h1>  My second drawing program </h1>
+    </header>
+
+    <div class="container_main_aside">
+        <main class="main">
+            <p><i> Instructions: </i><br/><br/> Choose the color you want to use for drawing. <br/> Then, press and hold the mouse over the paper <br/> to start drawing.</p>
+            <canvas id= "area_de_dibujo" class="canvas" width="300" height="300"></canvas>
+        </main>
+        <aside>
+            <div class="elegir_color">
+            <p>Choose a color:</p>
+            <input type= "color" id="rainbow"/>
+            <button id="botoncito">I want this color!</button>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <div class="footer_container">
+    <p class="p1">Coded by: Helena des Troy</p>
+    <p class="p2">You can see another repositories made by Helen <span><a href="https://github.com/HelenaDestroy?tab=repositories">here</a></span></p>
+        </div>
+</footer>
+<script src="eventomouses.js">        
+</script>
+</body>
+</html>
