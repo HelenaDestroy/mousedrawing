@@ -46,5 +46,5 @@ function dibujarLinea(colored,xinicial,yinicial, xfinal, yfinal, hoja)
     hoja.moveTo(xinicial, yinicial);
     hoja.lineTo(xfinal, yfinal);
     hoja.stroke();
-    hoja.closePath;
+    hoja.closePath();
     }
