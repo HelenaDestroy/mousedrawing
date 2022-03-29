@@ -1,43 +1,40 @@
-document.getElementById("area_de_dibujo");
-let cuadrito = document.getElementById("area_de_dibujo");
-let papel = cuadrito.getContext("2d");
+const cuadrito = document.getElementById("area_de_dibujo");
+const papel = cuadrito.getContext("2d");
 document.getElementById("rainbow");
 document.getElementById("botoncito");
-var colorin = document.getElementById("rainbow");
+let colorin = document.getElementById("rainbow");
 let x = 0;
 let y = 0;
-estado = 0;
+estado = false;
 
-area_de_dibujo.addEventListener("mousedown", pressMouse);
-area_de_dibujo.addEventListener("mousemove", moveMouse);
-area_de_dibujo.addEventListener("mouseup", leaveMouse);
-
-function pressMouse(estado)
-{
-estado = 1;
-x = papel.layerX;
-y = papel.layerY;
-}
-function moveMouse (estado)
-{ if (estado == 1) 
-    {
-    dibujarLinea(colorcito, x, y, papel.layerX, evento.layerY, papel);
-    x = papel.layerX;
-    y = papel.layerY;    
-    colorcito = colorin.value;
-    xfinal = papel.screenX + 0.5;
-    yfinal = papel.screenY + 0.5;
-    
-    }
-    else { leaveMouse();
-   }
-}
+papel.addEventListener("mousedown", pressMouse);
+papel.addEventListener("mousemove", moveMouse);
+papel.addEventListener("mouseup", leaveMouse);
 
 function leaveMouse(estado)
  {
     estado == 0;
  }
- 
+
+function pressMouse(estado)
+{
+estado == 1;
+}
+function moveMouse (estado)
+{ if (estado == 1) 
+    {
+    dibujarLinea(colorcito, x, y, xfinal, yfinal, papel);
+    x = papel.screenX;
+    y = papel.screenY;    
+    colorcito = colorin.value;
+    xfinal = papel.screenX + 0.5;
+    yfinal = papel.screenY + 0.5;
+    
+    }
+    else { leaveMouse(estado);
+   }
+}
+
 function dibujarLinea(colored,xinicial,yinicial, xfinal, yfinal, hoja)
 {
     let colored = colorin.value;
