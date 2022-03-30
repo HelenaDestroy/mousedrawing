@@ -3,8 +3,6 @@ const papel = cuadrito.getContext("2d");
 document.getElementById("rainbow");
 document.getElementById("botoncito");
 let colorin = document.getElementById("rainbow");
-let x = 0;
-let y = 0;
 estado = false;
 
 papel.addEventListener("mousedown", pressMouse);
@@ -24,14 +22,13 @@ function moveMouse (estado)
 { if (estado == 1) 
     {
     dibujarLinea(colorcito, x, y, xfinal, yfinal, papel);
-    x = papel.screenX;
-    y = papel.screenY;    
+   let x = papel.screenX;
+    let y = papel.screenY;    
     colorcito = colorin.value;
-    xfinal = papel.screenX + 0.5;
-    yfinal = papel.screenY + 0.5;
-    
-    }
-    else { leaveMouse(estado);
+   let xfinal = papel.screenX + 0.5;
+    let yfinal = papel.screenY + 0.5;
+        }
+    else { leaveMouse();
    }
 }
 
