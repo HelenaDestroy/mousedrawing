@@ -1,47 +1,45 @@
-const cuadrito = document.getElementById("area_de_dibujo");
-const papel = cuadrito.getContext("2d");
-document.getElementById("rainbow");
-document.getElementById("botoncito");
 let colorin = document.getElementById("rainbow");
-estado = false;
 
-papel.addEventListener("mousedown", pressMouse);
-papel.addEventListener("mousemove", moveMouse);
-papel.addEventListener("mouseup", leaveMouse);
+let x = 0;
+let y = 0;
+let estado = 0;
+document.getElementById("area_dibujo");
+let cuadrito = document.getElementById("area_dibujo");
+let papel = cuadrito.getContext("2d");
 
-function leaveMouse(estado)
+cuadrito.addEventListener("mousedown", pressMouse);
+cuadrito.addEventListener("mousemove", moveMouse);
+cuadrito.addEventListener("mouseup", leaveMouse);
+function pressMouse(evento)
+{
+estado = 1;
+x = evento.layerX;
+y = evento.layerY;
+}
+function leaveMouse(evento)
  {
-    estado == 0;
+    estado = 0;
  }
-
-function pressMouse(estado)
+function dibujarLinea(color,xi,yi, xf, yf, papel)
 {
-estado == 1;
+    papel.beginPath();
+    papel.strokeStyle = color;
+    papel.lineWidth = 2;
+    papel.moveTo(xi, yi);
+    papel.lineTo(xf, yf);
+    papel.stroke();
+    papel.closePath;
 }
-function moveMouse (estado)
-{ if (estado == 1) 
-    {
-    dibujarLinea(colorcito, x, y, xfinal, yfinal, papel);
-   let x = papel.screenX;
-    let y = papel.screenY;    
-    colorcito = colorin.value;
-   let xfinal = papel.screenX + 0.5;
-    let yfinal = papel.screenY + 0.5;
-        }
-    else { leaveMouse();
-   }
+function moveMouse (evento)
+{ if (estado == 1) {
+dibujarLinea(colorin.value, x, y, evento.layerX, evento.layerY, papel);
+x = 0.1;
+y = 0.1;
+}
+else { 
+x = evento.layerX;
+y = evento.layerY;
+}
 }
 
-function dibujarLinea(colored,xinicial,yinicial, xfinal, yfinal, hoja)
-{
-    let colored = colorin.value;
-    let cuadrito = document.getElementById("area_de_dibujo");
-    let hoja = cuadrito.getContext("2d");
-    hoja.beginPath();
-    hoja.strokeStyle = color;
-    hoja.lineWidth = 2;
-    hoja.moveTo(xinicial, yinicial);
-    hoja.lineTo(xfinal, yfinal);
-    hoja.stroke();
-    hoja.closePath();
-    }
+
