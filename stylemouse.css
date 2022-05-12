@@ -88,12 +88,13 @@ button {
     position:absolute;
     border-radius: 10px;
     border-style: solid;
-    border-width: 4px;
+    border-width: 8px;
     border-color:rgb(56, 23, 8) brown;
     font-size: 14px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
-    margin-left: 20px;
+    margin-left: 30px;
+    background-image: url('https://www.publicdomainpictures.net/pictures/70000/velka/background-papier-blanc-3.jpg');
         }
 
  #rainbow {
@@ -101,6 +102,7 @@ button {
     border-width: 3px;
     border-style: solid;;
     border-color: darkred;
+    margin-left: 20px;
     
 }
 #rainbow, button {

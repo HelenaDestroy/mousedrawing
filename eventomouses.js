@@ -42,3 +42,14 @@ function moveMouse (event)
     x = event.clientX;
     y = event.clientY;
 }
+
+let button = 0;
+const borrar = document.getElementById("botonBorrar");
+borrar.addEventListener("click", canvasClear);
+
+function canvasClear(){
+button = 1;
+if (button = 1){
+papel.clearRect(0, 0, 300, 300);
+}
+}
