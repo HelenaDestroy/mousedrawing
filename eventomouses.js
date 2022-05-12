@@ -19,7 +19,6 @@ function leaveMouse(evento)
  {
     estado = 0;
  }
-
 function dibujarLinea(color,xi,yi, xf, yf, papel)
 {
     papel.beginPath();
